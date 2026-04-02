@@ -953,7 +953,7 @@ function renderAll(emps) {
   grid.innerHTML = '';
   emps.forEach(e => grid.appendChild(makeBadge(e)));
   document.getElementById('totalNum').textContent = emps.length;
-  document.getElementById('pageNum').textContent = Math.ceil(emps.length / 8);
+  document.getElementById('pageNum').textContent = Math.ceil(emps.length / 10);
 }
 
 // ============ 打印 ============
