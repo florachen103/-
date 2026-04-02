@@ -412,7 +412,6 @@
     display: grid !important;
     grid-template-columns: 96mm 96mm;
     gap: 2mm 4mm;
-    page-break-after: always;
     width: 196mm;
     padding: 0;
   }
@@ -967,6 +966,7 @@ function doPrint() {
   for (let p = 0; p < pages; p++) {
     const pageDiv = document.createElement('div');
     pageDiv.className = 'badge-page';
+    if (p < pages - 1) pageDiv.style.pageBreakAfter = 'always';
     const slice = employees.slice(p * perPage, (p + 1) * perPage);
     slice.forEach(e => pageDiv.appendChild(makeBadge(e)));
     for (let i = slice.length; i < perPage; i++) {
